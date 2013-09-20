@@ -1,0 +1,17 @@
+@(form: Form[models.User])
+@import helper.twitterBootstrap._
+
+<div class="row">
+    <div class="span8">
+        <h2>Add an article</h2>
+        @helper.form(action = routes.Application.createFromJson(), 'method -> "PUT", 'class -> "form-horizontal") {
+            @helper.inputText(form("username"))
+            @helper.inputText(form("password"))
+            @helper.textarea(form("firstName"))
+            @helper.textarea(form("lastName"))
+            <div class="form-actions">
+                <input class="btn btn-primary" type="submit">
+            </div>
+        }
+    </div>
+</div>

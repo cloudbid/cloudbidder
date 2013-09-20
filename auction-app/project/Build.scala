@@ -6,16 +6,10 @@ object ApplicationBuild extends Build {
 
   val appName         = "CloudBidder"
   val appVersion      = "1.0-SNAPSHOT"
-
-  val appDependencies = Seq(
-    // Add your project dependencies here,
-    jdbc,
-    anorm
-  )
-
+  val appDependencies = Seq("org.reactivemongo" %% "play2-reactivemongo" % "0.10-SNAPSHOT")
 
   val main = play.Project(appName, appVersion, appDependencies).settings(
-    // Add your own project settings here      
+    resolvers += "Sonatype Snapshots" at "http://oss.sonatype.org/content/repositories/snapshots/"
   )
 
 }
